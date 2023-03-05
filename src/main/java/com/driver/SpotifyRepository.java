@@ -29,7 +29,7 @@ public class SpotifyRepository {
         creatorPlaylistMap = new HashMap<>();
         userPlaylistMap = new HashMap<>();
         songLikeMap = new HashMap<>();
-
+        //user
         users = new ArrayList<>();
         songs = new ArrayList<>();
         playlists = new ArrayList<>();
@@ -45,7 +45,7 @@ public class SpotifyRepository {
 
         return user;
     }
-
+//artist
     public Artist createArtist(String name) {
         Artist artist = new Artist();
         artist.setName(name);
@@ -54,7 +54,7 @@ public class SpotifyRepository {
         artists.add(artist);
         return artist;
     }
-
+//album
     public Album createAlbum(String title, String artistName) {
         Artist artist1 = null;
 
@@ -97,7 +97,7 @@ public class SpotifyRepository {
             return album;
         }
     }
-
+//song
     public Song createSong(String title, String albumName, int length) throws Exception{
 
         Album album = null;
@@ -134,7 +134,7 @@ public class SpotifyRepository {
             return song;
         }
     }
-
+//playlist
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
 
         //Create a playlist with given title and add all songs having the given length in the database to that playlist
@@ -284,7 +284,7 @@ public class SpotifyRepository {
 
         return playlist;
     }
-
+//like
     public Song likeSong(String mobile, String songTitle) throws Exception {
 
         //The user likes the given song. The corresponding artist of the song gets auto-liked
